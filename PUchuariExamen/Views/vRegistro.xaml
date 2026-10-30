@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PUchuariExamen.Views.vRegistro"
+             Title="vRegistro">
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="20">
+
+            <Label x:Name="lblUsuarioConectado"
+               Style="{StaticResource UsuarioConectadoStyle}" />
+
+            <Label Text="REGISTRO"
+               TextColor="Blue"
+               FontSize="22"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center" />
+
+            <Grid RowDefinitions="Auto,Auto"
+              ColumnDefinitions="*,*,*"
+              RowSpacing="5"
+              ColumnSpacing="10">
+
+                <Label Grid.Row="0" Grid.Column="0"
+                   Text="Nombre"
+                   Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label Grid.Row="0" Grid.Column="1"
+                   Text="Apellido"
+                   Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label Grid.Row="0" Grid.Column="2"
+                   Text="Edad"
+                   Style="{StaticResource EtiquetaCampoStyle}" />
+
+                <Entry Grid.Row="1" Grid.Column="0"
+                   x:Name="txtNombre"
+                   Placeholder="Ingresar Nombre" />
+                <Entry Grid.Row="1" Grid.Column="1"
+                   x:Name="txtApellido"
+                   Placeholder="Ingresar Apellido" />
+                <Entry Grid.Row="1" Grid.Column="2"
+                   x:Name="txtEdad"
+                   Placeholder="Ingresar Edad"
+                   Keyboard="Numeric"
+                   MaxLength="3" />
+            </Grid>
+
+            <!-- Grid 5 filas x 2 columnas: datos de la membresía -->
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+              ColumnDefinitions="Auto,*"
+              RowSpacing="10"
+              ColumnSpacing="10">
+
+                <Label Grid.Row="0" Grid.Column="0"
+                   Text="Fecha inicio:"
+                   Style="{StaticResource EtiquetaCampoStyle}" />
+                <DatePicker Grid.Row="0" Grid.Column="1"
+                        x:Name="dpFechaInicio"
+                        Format="dd/MM/yyyy" />
+
+                <Label Grid.Row="1" Grid.Column="0"
+                   Text="Plan:"
+                   Style="{StaticResource EtiquetaCampoStyle}" />
+                <Picker Grid.Row="1" Grid.Column="1"
+                    x:Name="pkPlan"
+                    Title="Seleccionar plan" />
+
+                <Label Grid.Row="2" Grid.Column="0"
+                   Text="Casillero:"
+                   Style="{StaticResource EtiquetaCampoStyle}" />
+                <Switch Grid.Row="2" Grid.Column="1"
+                    x:Name="swCasillero"
+                    HorizontalOptions="Start"
+                    Toggled="OnCasilleroToggled" />
+
+                <Label Grid.Row="3" Grid.Column="0"
+                   Text="Monto inicial:"
+                   Style="{StaticResource EtiquetaCampoStyle}" />
+                <Entry Grid.Row="3" Grid.Column="1"
+                   x:Name="txtMontoInicial"
+                   Placeholder="Entre 120 y 600"
+                   Keyboard="Numeric"
+                   TextChanged="OnMontoInicialTextChanged" />
+
+                <Button Grid.Row="4" Grid.Column="0"
+                    x:Name="btnCalcular"
+                    Text="Calcular Pago mensual"
+                    Style="{StaticResource BotonPrincipalStyle}"
+                    Clicked="OnCalcularClicked" />
+                <Entry Grid.Row="4" Grid.Column="1"
+                   x:Name="txtPagoMensual"
+                   Placeholder="Pago mensual"
+                   IsReadOnly="True" />
+            </Grid>
+
+            <!-- Fuera del Grid -->
+            <Button x:Name="btnVerResumen"
+                Text="Ver Resumen"
+                Style="{StaticResource BotonPrincipalStyle}"
+                Clicked="OnVerResumenClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
