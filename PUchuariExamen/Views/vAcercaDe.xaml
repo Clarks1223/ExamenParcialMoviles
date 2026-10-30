@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PUchuariExamen.Views.vAcercaDe"
+             Title="Acerca de">
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="20">
+
+            <Label Text="ACERCA DE"
+                   TextColor="Purple"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" />
+
+            <!-- Grid 3 filas x 2 columnas: datos del estudiante -->
+            <Grid RowDefinitions="Auto,Auto,Auto"
+                  ColumnDefinitions="Auto,*"
+                  RowSpacing="10"
+                  ColumnSpacing="10">
+
+                <Label Grid.Row="0" Grid.Column="0"
+                       Text="Nombre:"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label Grid.Row="0" Grid.Column="1"
+                       Text="Pablo Uchuari"
+                       Style="{StaticResource ValorResumenStyle}" />
+
+                <Label Grid.Row="1" Grid.Column="0"
+                       Text="Carrera:"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label Grid.Row="1" Grid.Column="1"
+                       Text="Ingeniería en Sistemas"
+                       Style="{StaticResource ValorResumenStyle}" />
+
+                <Label Grid.Row="2" Grid.Column="0"
+                       Text="Paralelo:"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label Grid.Row="2" Grid.Column="1"
+                       Text="Séptimo A"
+                       Style="{StaticResource ValorResumenStyle}" />
+            </Grid>
+
+            <Button x:Name="btnVolver"
+                    Text="Volver"
+                    Style="{StaticResource BotonPrincipalStyle}"
+                    Clicked="OnVolverClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

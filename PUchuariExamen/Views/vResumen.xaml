@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PUchuariExamen.Views.vResumen"
+             Title="Resumen">
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="20">
+
+            <Label x:Name="lblUsuarioConectado"
+                   Style="{StaticResource UsuarioConectadoStyle}" />
+
+            <Label Text="RESUMEN"
+                   Style="{StaticResource TituloSeccionStyle}" />
+
+            <!-- Grid 9 filas x 2 columnas: datos del registro -->
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+                  ColumnDefinitions="Auto,*"
+                  RowSpacing="10"
+                  ColumnSpacing="10">
+
+                <Label Grid.Row="0" Grid.Column="0"
+                       Text="Nombre:"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label Grid.Row="0" Grid.Column="1"
+                       x:Name="lblNombre"
+                       Style="{StaticResource ValorResumenStyle}" />
+
+                <Label Grid.Row="1" Grid.Column="0"
+                       Text="Apellido:"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label Grid.Row="1" Grid.Column="1"
+                       x:Name="lblApellido"
+                       Style="{StaticResource ValorResumenStyle}" />
+
+                <Label Grid.Row="2" Grid.Column="0"
+                       Text="Edad:"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label Grid.Row="2" Grid.Column="1"
+                       x:Name="lblEdad"
+                       Style="{StaticResource ValorResumenStyle}" />
+
+                <Label Grid.Row="3" Grid.Column="0"
+                       Text="Fecha inicio:"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label Grid.Row="3" Grid.Column="1"
+                       x:Name="lblFechaInicio"
+                       Style="{StaticResource ValorResumenStyle}" />
+
+                <Label Grid.Row="4" Grid.Column="0"
+                       Text="Plan:"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label Grid.Row="4" Grid.Column="1"
+                       x:Name="lblPlan"
+                       Style="{StaticResource ValorResumenStyle}" />
+
+                <Label Grid.Row="5" Grid.Column="0"
+                       Text="Casillero:"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label Grid.Row="5" Grid.Column="1"
+                       x:Name="lblCasillero"
+                       Style="{StaticResource ValorResumenStyle}" />
+
+                <Label Grid.Row="6" Grid.Column="0"
+                       Text="Monto inicial:"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label Grid.Row="6" Grid.Column="1"
+                       x:Name="lblMontoInicial"
+                       Style="{StaticResource ValorResumenStyle}" />
+
+                <Label Grid.Row="7" Grid.Column="0"
+                       Text="Pago mensual:"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label Grid.Row="7" Grid.Column="1"
+                       x:Name="lblPagoMensual"
+                       Style="{StaticResource ValorResumenStyle}" />
+
+                <Label Grid.Row="8" Grid.Column="0"
+                       Text="Pago total:"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+                <Label Grid.Row="8" Grid.Column="1"
+                       x:Name="lblPagoTotal"
+                       FontAttributes="Bold"
+                       Style="{StaticResource ValorResumenStyle}" />
+            </Grid>
+
+            <Button x:Name="btnNuevoRegistro"
+                    Text="Nuevo registro"
+                    Style="{StaticResource BotonPrincipalStyle}"
+                    Clicked="OnNuevoRegistroClicked" />
+
+            <Button x:Name="btnCerrarSesion"
+                    Text="Cerrar sesión"
+                    Style="{StaticResource BotonSecundarioStyle}"
+                    Clicked="OnCerrarSesionClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

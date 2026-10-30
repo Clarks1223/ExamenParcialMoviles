@@ -1,4 +1,5 @@
 using System.Globalization;
+using PUchuariExamen.Models;
 
 namespace PUchuariExamen.Views;
 
@@ -101,7 +102,7 @@ public partial class vRegistro : ContentPage
             Nombre = nombre,
             Apellido = apellido,
             Edad = edad.Value,
-            FechaInicio = dpFechaInicio.Date,
+            FechaInicio = dpFechaInicio.Date ?? DateTime.Today,
             Plan = ReglasNegocio.Planes[pkPlan.SelectedIndex],
             Casillero = swCasillero.IsToggled,
             MontoInicial = montoInicial.Value,
@@ -148,5 +149,4 @@ public partial class vRegistro : ContentPage
         }
         return monto;
     }
-}
 }
