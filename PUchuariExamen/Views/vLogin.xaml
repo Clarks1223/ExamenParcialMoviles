@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PUchuariExamen.Views.vLogin"
+             Title="vLogin">
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="20">
+
+            <Image Source="logo.png"
+                   HeightRequest="180"
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center"
+                   SemanticProperties.Description="Logo del gimnasio" />
+
+            <Label Text="Bienvenido"
+                   TextColor="Black"
+                    FontSize="26"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center" />
+
+            <Label Text="INICIAR SESIÓN"
+                   TextColor="Purple"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" />
+
+            <Grid RowDefinitions="Auto,Auto,Auto"
+                  ColumnDefinitions="Auto,*"
+                  RowSpacing="10"
+                  ColumnSpacing="10">
+
+                <Label Grid.Row="0" Grid.Column="0"
+                       Text="Usuario:"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+                <Entry Grid.Row="0" Grid.Column="1"
+                       x:Name="txtUsuario"
+                       Placeholder="Ingresar usuario" />
+                
+                <Label Grid.Row="1" Grid.Column="0"
+                       Text="Contraseña:"
+                       Style="{StaticResource EtiquetaCampoStyle}" />
+                <Entry Grid.Row="1" Grid.Column="1"
+                       x:Name="txtContrasena"
+                       Placeholder="Ingresar contraseña"
+                       IsPassword="True" />
+
+                <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                        x:Name="btnIniciarSesion"
+                        Text="Iniciar sesión"
+                        Style="{StaticResource BotonPrincipalStyle}"
+                        Clicked="OnIniciarSesionClicked" />
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
